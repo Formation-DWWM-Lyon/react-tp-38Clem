@@ -1,12 +1,19 @@
-import React, { Component } from 'react'
+import React from 'react';
+import Layout from './Layout';
 
 
-export default class Profile extends Component {
+const Profile = (result) => {
+  console.log(result);
 
-  render =  () => {
+  console.log('Je suis dans Profile');
 
-    return (<div>Profile Component</div>)
+  return (
+  <Layout>
+    <div> Profile Component</div>
+  </Layout>)
 
-  }
-  
 }
+
+
+
+export default Profile
