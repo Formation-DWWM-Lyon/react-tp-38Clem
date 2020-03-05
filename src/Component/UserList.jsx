@@ -23,8 +23,10 @@ export default class UserList extends Component {
 
   render = () => {
     const { result, info } = this.state;
+    console.log('result');
     console.log(result);
-
+    console.log('info');
+    console.log(info);
     if (!result) {
       return (
         <div className="text-center">
@@ -43,9 +45,12 @@ export default class UserList extends Component {
         <ListGroup>
           {result.map((item, index) =>
             <ListGroup.Item key={index}>
-              <Link to={`/profile/${item.name.first}${item.name.last}`}>
               {item.name.title} {item.name.first} {item.name.last}
-              </Link>
+              <Button>
+            <Link to={`/profile/${info.seed}`}>
+                See Profile
+            </Link>
+              </Button>
             </ListGroup.Item>
           )}
         </ListGroup>

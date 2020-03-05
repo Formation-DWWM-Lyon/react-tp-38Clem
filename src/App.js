@@ -8,7 +8,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home}/>
         <Route exact path="/userlist" component={UserList}/>
-        <Route exact path="/profile/:user" component={Profile}/>
+        <Route exact path="/profile/:seed" component={Profile}/>
       </Switch>
       </BrowserRouter>
   );
