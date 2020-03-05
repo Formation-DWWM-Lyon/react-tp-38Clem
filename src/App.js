@@ -1,11 +1,14 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Home } from './Component';
 
 function App() {
   return (
-    <Container>
-      Votre code ici!
-    </Container>
+      <BrowserRouter>
+      <Switch>
+        <Route path="/" component={Home}/>
+      </Switch>
+      </BrowserRouter>
   );
 }
 
