@@ -3,6 +3,7 @@ import Axios from 'axios';
 import Layout from './Layout';
 import { ListGroup } from 'react-bootstrap';
 import Loader from 'react-loader-spinner';
+import { Link } from 'react-router-dom';
 
 export default class UserList extends Component {
 
@@ -41,7 +42,9 @@ export default class UserList extends Component {
         <ListGroup>
           {result.map((item, index) =>
             <ListGroup.Item key={index}>
-              '{item.name.title} {item.name.first} {item.name.last}'
+              <Link to={`/profile/${item.name.first}${item.name.last}`}>
+              {item.name.title} {item.name.first} {item.name.last}
+              </Link>
             </ListGroup.Item>
           )}
         </ListGroup>
