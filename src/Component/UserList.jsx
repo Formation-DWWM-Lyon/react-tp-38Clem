@@ -4,6 +4,7 @@ import Layout from './Layout';
 import { ListGroup } from 'react-bootstrap';
 import Loader from 'react-loader-spinner';
 import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 export default class UserList extends Component {
 
@@ -48,7 +49,7 @@ export default class UserList extends Component {
             </ListGroup.Item>
           )}
         </ListGroup>
-        <div>UserList Component</div>
+        <Button onClick={this.getRandomUser}>Click to get a new list</Button>
       </Layout>
 
     )
