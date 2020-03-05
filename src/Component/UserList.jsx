@@ -3,7 +3,6 @@ import Axios from 'axios';
 import Layout from './Layout';
 import { ListGroup, Card } from 'react-bootstrap';
 import Loader from 'react-loader-spinner';
-import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import { Image } from 'react-bootstrap';
 
@@ -43,25 +42,23 @@ export default class UserList extends Component {
 
     return (
       <Layout>
-        {result.map((item, index) =>
-        <div key={index} className="List">
-          <Card key={index} className="Profile" >
-            <Image className="ProfilPic" src={item.picture.large} />
-            <Card.Title className="Name">
-              {item.name.title} {item.name.first} {item.name.last}
-            </Card.Title>
-            <Card.Body>
-              <ListGroup >
-                <Card.Text className="Gender">{item.gender}</Card.Text>
-                <Card.Text>{item.dob.age}</Card.Text>
-                <Card.Text>{item.location.city}, {item.location.country}</Card.Text>
-              </ListGroup>
-            </Card.Body>
-          </Card>
-
-        </div>
-
-        )}
+        <section className="Profile">
+          {result.map((item, index) =>
+            <Card key={index}>
+              <Image className="ProfilPic" src={item.picture.medium} />
+              <Card.Title className="Name">
+                {item.name.first} {item.name.last}
+              </Card.Title>
+              <Card.Body>
+                <ListGroup >
+                  <Card.Text >{item.gender}</Card.Text>
+                  <Card.Text>{item.dob.age}</Card.Text>
+                  <Card.Text>{item.location.city}, {item.location.country}</Card.Text>
+                </ListGroup>
+              </Card.Body>
+            </Card>
+          )}
+        </section>
         <Button onClick={this.getRandomUser}>Click to get a new list</Button>
       </Layout>
 
