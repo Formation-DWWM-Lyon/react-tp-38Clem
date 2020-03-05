@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import Layout from './Layout';
-import { ListGroup, Card } from 'react-bootstrap';
+import { ListGroup, Card, CardColumns } from 'react-bootstrap';
 import Loader from 'react-loader-spinner';
 import { Button } from 'react-bootstrap';
 import { Image } from 'react-bootstrap';
@@ -42,10 +42,10 @@ export default class UserList extends Component {
 
     return (
       <Layout>
-        <section className="Profile">
+        <CardColumns className="cardlist">
           {result.map((item, index) =>
             <Card key={index}>
-              <Image className="ProfilPic" src={item.picture.medium} />
+              <Image className="ProfilPic" src={item.picture.large} />
               <Card.Title className="Name">
                 {item.name.first} {item.name.last}
               </Card.Title>
@@ -58,7 +58,7 @@ export default class UserList extends Component {
               </Card.Body>
             </Card>
           )}
-        </section>
+        </CardColumns>
         <Button onClick={this.getRandomUser}>Click to get a new list</Button>
       </Layout>
 
